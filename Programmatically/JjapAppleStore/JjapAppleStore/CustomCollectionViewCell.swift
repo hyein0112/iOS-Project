@@ -62,31 +62,31 @@ class CustomCollectionViewCell: UICollectionViewCell {
         
         imgView.snp.makeConstraints { make in
             make.width.equalToSuperview().offset(160)
-            make.height.equalToSuperview().offset(231)
+            make.height.equalToSuperview().offset(117.33)
             make.top.equalToSuperview()
             make.left.equalToSuperview()
         }
         
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(imgView.snp.bottom).offset(14.67)
-            make.centerX.equalToSuperview()
+            make.left.equalToSuperview()
         }
         
         subLabel.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(6)
-            make.centerX.equalToSuperview()
+            make.left.equalToSuperview()
         }
         
         informationButton.snp.makeConstraints { make in
             make.width.equalToSuperview().dividedBy(4.81)
             make.height.equalToSuperview().dividedBy(45.11)
             make.top.equalTo(subLabel.snp.bottom).offset(24)
-            make.centerX.equalToSuperview()
+            make.left.equalToSuperview()
         }
         
         shoppingButton.snp.makeConstraints { make in
             make.top.equalTo(informationButton.snp.bottom).offset(14)
-            make.centerX.equalToSuperview()
+            make.left.equalToSuperview()
         }
     }
     
