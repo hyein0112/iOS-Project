@@ -125,11 +125,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
         let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 20
         layout.scrollDirection = .horizontal
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.backgroundColor = .clear
         $0.collectionViewLayout = layout
-        $0.contentInset = UIEdgeInsets.init(top: 0, left: 17, bottom: 0, right: 0)
+        $0.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 57)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -158,6 +159,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         return cell
     }
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return self.view.frame.height/14.5
@@ -354,11 +356,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         collectionView.snp.makeConstraints { make in
             make.height.equalToSuperview().dividedBy(3.52)
             make.width.equalTo((self.view.frame.width/2.34)*4)
-            make.left.equalToSuperview().offset(self.view.frame.width/3.5)
+            make.left.equalToSuperview().offset(107)
             make.top.equalTo(equipmentLabel.snp.bottom).offset(self.view.frame.width/23.88)
         }
     }
 
+}
+extension ViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        // code
+        return CGSize(width: 700, height: 231)
+    }
 }
 
 
